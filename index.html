@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Productivity Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Productivity Dashboard</h1>
+        <div class="moon-icon" id="theme-toggle">🌙</div>
+    </header>
+
+    <nav>
+        <a href="#" class="nav-link active" data-page="home">Home</a>
+        <a href="#" class="nav-link" data-page="focus-timer">Focus Timer</a>
+        <a href="#" class="nav-link" data-page="notes">Notes</a>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+        <div class="section">
+            <div class="section-header">
+                <h2>Today's Tasks</h2>
+                <span class="date" id="current-date"></span>
+            </div>
+            
+            <div class="task-add-container">
+                <div class="add-btn" id="task-add-btn">
+                    <span>+</span> <span>Add task</span>
+                </div>
+                <div class="add-form" id="task-add-form">
+                    <input type="text" id="task-input" placeholder="What needs to be done?" aria-label="Add a new task">
+                    <div class="form-actions">
+                        <button class="btn-small" id="task-cancel">Cancel</button>
+                        <button class="btn-small" id="task-save">Add</button>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="todo-list" id="todo-list">
+                <!-- Tasks will be added here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Focus Timer Page -->
+    <div id="focus-timer-page" class="page">
+        <div class="section">
+            <div class="section-header">
+                <h2>Focus Timer</h2>
+            </div>
+            <div class="timer-display" id="timer-display">25:00</div>
+            <div class="timer-controls">
+                <button id="start-timer">Start</button>
+                <button id="reset-timer">Reset</button>
+            </div>
+            <div class="timer-type">
+                <label for="timer-select">Timer type:</label>
+                <select id="timer-select">
+                    <option value="25">Pomodoro (25m)</option>
+                    <option value="5">Short Break (5m)</option>
+                    <option value="15">Long Break (15m)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notes Page -->
+    <div id="notes-page" class="page">
+        <div class="section">
+            <div class="section-header">
+                <h2>Notes</h2>
+            </div>
+            
+            <div class="note-add-container">
+                <div class="add-btn" id="note-add-btn">
+                    <span>+</span> <span>Add note</span>
+                </div>
+                <div class="add-form" id="note-add-form">
+                    <textarea id="note-content" placeholder="Add a new note..." aria-label="Note content"></textarea>
+                    <div class="form-actions">
+                        <button class="btn-small" id="note-cancel">Cancel</button>
+                        <button class="btn-small" id="note-save">Add</button>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="notes-list" id="notes-list">
+                <!-- Notes will be added here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
